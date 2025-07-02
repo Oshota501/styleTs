@@ -3,6 +3,8 @@
 ## 規格
 - public elms 
 要素を貯めるための配列
+- jsファイル
+  tscコマンドでのコンパイル先
 
 ## 完成
 ### BackgroundKishoi
