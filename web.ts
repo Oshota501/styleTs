@@ -43,5 +43,65 @@ class BackGroundKishoi{
 }
 class TextDenger{
     public elms ;
-
+    public color = [
+        "yellow",
+        "black"
+    ] ;
+    private flag  = true ;
+    public start(){
+        setInterval(()=>{
+            for(let i = 0 ; i < this.elms.length ; i++){
+                if(this.flag){
+                    this.elms[i].style.color = this.color[0] ;
+                    this.elms[i].style.background = this.color[1] ;
+                }else{
+                    this.elms[i].style.color = this.color[1] ;
+                    this.elms[i].style.background = this.color[0] ;
+                }
+                this.flag = ! this.flag;
+            }
+        },500)
+    }
 }
+class rotationElms{
+    public elms ;
+    private deg = 0 ;
+    public startX(){
+        setInterval(()=>{
+            this.deg++;
+            if(this.deg > 360){
+                this.deg = 0;
+            }
+            for(let i = 0 ; i < this.elms.length ; i++){
+                this.elms[i].style.transform = "rotateX("+this.deg+"deg)";
+            }
+        },20);
+    }
+    public startY(){
+        setInterval(()=>{
+            this.deg++;
+            if(this.deg > 360){
+                this.deg = 0;
+            }
+            for(let i = 0 ; i < this.elms.length ; i++){
+                this.elms[i].style.transform = "rotateY("+this.deg+"deg)";
+            }
+        },20);
+    }
+    public startZ(){
+        setInterval(()=>{
+            this.deg++;
+            if(this.deg > 360){
+                this.deg = 0;
+            }
+            for(let i = 0 ; i < this.elms.length ; i++){
+                this.elms[i].style.transform = "rotateZ("+this.deg+"deg)";
+            }
+        },20);
+    }
+}
+
+
+let a = new rotationElms();
+a.elms=document.getElementsByClassName("aa");
+a.startX();
