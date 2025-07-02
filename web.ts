@@ -1,6 +1,6 @@
 
 class BackGroundKishoi{
-    public elm = document.body ;
+    public elm ;
     private color = [
         function(flag){
             if(flag){
@@ -47,5 +47,3 @@ class BackGroundKishoi{
         },100);
     }
 }
-let fn = new BackGroundKishoi();
-fn.start();
